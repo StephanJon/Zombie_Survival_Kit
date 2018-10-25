@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0779c7f7650c874b894d5bd0654c861, type: 3}
+  m_Name: MeleeWeapon
+  m_EditorClassIdentifier: 
+  name: MeleeWeapon
+  icon: {fileID: 21300000, guid: 398ad68a814548c46bdc19858b979bfd, type: 3}
+  isDefaultItem: 0
+  equipSlot: 3
+  attackModifier: 2
+  defenceModifier: 0

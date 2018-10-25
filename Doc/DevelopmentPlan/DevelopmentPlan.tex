@@ -1,0 +1,86 @@
+\documentclass{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\title{SE 3XA3: Development Plan\\Zombie Survival}
+
+\author{Team 6
+		\\ Mohammad Hussain, hussam17
+		\\ Brian Jonatan,  jonatans
+		\\ Shivaansh Prasann, prasanns
+}
+
+\date{September 26, 2018}
+
+%\input{../Comments}
+
+\begin{document}
+
+\begin{table}[hp]
+\caption{Revision History} \label{TblRevisionHistory}
+\begin{tabularx}{\textwidth}{llX}
+\toprule
+\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+\midrule
+2018-06-26 & Mohammad, Brian, Shivaansh & Added first change for every section\\
+2018-06-27 & Brian & Added introductory blurb\\
+2018-06-27 & Mohammad & Added pointer to project schedule\\
+2018-10-16 & Shivaansh & Updated the Proof of Concept section\\
+... & ... & ...\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\maketitle
+
+This document describes the development decisions (which are subject to change) that will be translated throughout the entire development process of Zombie Survival Kit.
+
+\section{Team Meeting Plan}
+Mondays: 2:30PM - 4:30PM (HSL Library)\\
+Tuesdays: 5:00 PM - 7:00 PM (HSL Library) (as and when needed)\\
+Tuesdays: 7:00 PM - 9:00 PM (ITB 236 Lab)\\
+Wednesdays: 12:30 PM - 2:30 PM (ITB 236 Lab)
+
+\section{Team Communication Plan}
+Discord Server (Audio calls for meetings)\\
+Facebook Group Chat for general inquiries
+
+\section{Team Member Roles}
+Brian Jonatan - Developer and Tester\\
+Mohammad Hussain - Developer and Scribe\\
+Shivaansh Prasann - Developer and Project Manager
+
+\section{Git Workflow Plan}
+Each developer has their own branch. Code reviews will be conducted during meetings and once all individual branches are fully functional each branch will be merged to master. Tags will be used after pushing each deliverable for the project.
+
+\section{Proof of Concept Demonstration Plan}
+The main challenges with this project would be the following: \newline
+\newline
+1) Inventory system: The inventory system involves picking up, consuming and equipping (pickable) items found across the terrain. These items can be seen in the Inventory UI which is accessed by pressing the 'I' button on the keyboard. Items are picked up using the 'E' button, once the player has moved close enough to them. To use an item, the user needs to open the inventory panel and click on the desired object. To remove items from the inventory, the user needs to click on the remove button at the top right of each icon in the inventory panel.
+\newline
+\newline
+2) Enemy movement: The enemy zombies around the map move towards the player when the player moves close to the enemy. This is implemented using the Navmesh functionality of Unity 3D. Once the player walks a certain distance away from the enemy, the enemy stops following the player and oscillates around a position.
+\newline
+\newline
+3) Movement on a plane: Moving the player around is the most elementary component of our project. The player can walk around the terrain using the W, A, S, D keys on the keyboard and can turn the camera in any direction using the mouse.
+
+\section{Technology}
+Programming Language: C\# \\
+IDE: Visual Studio\\
+Testing Framework: Unity3D\\
+Document Generation: XML Documentation Comments
+
+\section{Coding Style}
+C\# Coding Conventions (C\# Programming Guide)\\
+URL: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions
+
+\section{Project Schedule}
+
+Please refer to the file: Gantt Chart - Group 6.gan in this folder for the project schedule.
+
+\section{Project Review}
+
+\end{document}

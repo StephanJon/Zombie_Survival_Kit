@@ -1,0 +1,361 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: Software Requirements Specification\\Zombie Survival Kit}
+
+\author{Team 6, Group 6
+		\\ Brian Jonatan, jonatans
+		\\ Mohammad Hussain, hussam17
+		\\ Shivaansh Prasann, prasanns
+}
+
+\date{\today}
+
+%\input{../Comments}
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+October 4, 2018 & 1.0 & Added first changes to requirements doc\\
+October 5, 2018 & 1.1 & Initial Commit\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+%This document describes the requirements for Zombie Survival Kit.  The template for the Software
+%Requirements Specification (SRS) is a subset of the Volere
+%template~\citep{RobertsonAndRobertson2012}.  If you make further modifications
+%to the template, you should explicity state what modifications were made.
+
+\section{Project Drivers}
+
+\subsection{The Purpose of the Project}
+Creating an FPS game is not an easy task, and many aspiring game developers pick up a game engine but are unable to finish their projects due to the huge learning curve. 
+\newline
+\newline
+Zombie Survival Kit aims to support aspiring game developers by providing a fully customizable and easy to use starting ground for them to create the FPS game they dream of. Zombie Survival Kit shall also introduce video game players to game development.
+\subsection{The Stakeholders}
+
+\subsubsection{The Client}
+The clients for Zombie Survival Kit as of this moment are the group members of Team 6, as well as the instructor and teaching staff of SFWR ENG 3XA3.
+
+\subsubsection{The Customers}
+The customers for Zombie Survival Kit would be aspiring game developers.
+\newline
+Game developers would be using Zombie Survival Kit as a starting point to create their own First Person Shooter games.
+\subsubsection{Other Stakeholders}
+Ohter stakeholders include video game players. Game players will be using Zombie Survival Kit not only as an entertainment product, but also as a tool to explore game development.
+\subsection{Mandated Constraints}
+1. Input Constraints: Only a keyboard and a mouse are to be used for input.
+\newline
+\newline
+2. Space Constraints: Zombie Survival Kit shall not use more than 10 GB of space on the computer’s hard drive.
+\newline
+\newline
+3. Pricing Constraints: Zombie Survival Kit shall not cost more than \$0.00
+
+\subsection{Naming Conventions and Terminology}
+1. FPS: Frames per second, a unit of measurement used to determine the smoothness of game visuals.
+\newline
+2. Unity: A game development framework which uses C\# as the primary programming language and allows us to integrate media and animations into a project to create an interactive computer game. 
+\newline
+3. Users: Developers and video game players who use Zombie Survival Kit. 
+\newline
+4. Developers: Programmers who will use Zombie Survival Kit to make their own first person shooter game. 
+\newline
+5. Players: People who will play games made using Zombie Survival Kit. 
+\newline
+6. GPU: A piece of hardware on a computer used to render graphics on a computer. 
+\newline
+7. VRAM: The amount of memory available to the GPU. 
+
+\subsection{Relevant Facts and Assumptions}
+
+1. The computer should have a discrete GPU with at least 1 GB of GDDR5 VRAM.
+\newline
+2. The user should be at least 12 years old.
+\newline
+3. The computer should be running the Windows operating system, at least Windows 8.
+\newline
+4. The user has a keyboard and a mouse connected to computer.
+\newline
+5. The user has previous experience of playing PC games.
+
+
+\section{Functional Requirements}
+
+\subsection{The Scope of the Work and the Product}
+The original developer’s work will be used as a ground zero for the project to replicate some basic functionalities from each aspect they worked on. Coding style will be heavily improved, and the scripts will be changed to use a MVC model. Extra features, items, or NPCs will be added into each part of the game in order to make it more full/complete. In general, the game will consist of a player (first-person) dropped into an open world with various terrains that has different types of zombies that they must defeat to stay alive and get better gear, weapons, consumable items, and more.
+\subsubsection{The Context of the Work}
+The Zombie Survival Kit open source project has all the individual components of a zombie survival game coded, but none of it is put together. The creator of the project developed the logic and UI for individual aspects such as a systems for combat, inventory, items, day/night, and enemy AI but there is no playable environment with all these parts working together. What Group 6 plans to do is re-work this game from the ground up and develop it how it was meant to be, as a finished playable product. 
+%\subsubsection{Work Partitioning}
+
+%\subsubsection{Individual Product Use Cases}
+
+\subsection{Functional Requirements}
+
+1. The player must be able to move forward, left, down, and right using the WASD keys 
+\newline
+2. The player must be able to look in all directions by moving their mouse
+\newline
+3. Zombie enemies must walk back and forth between random points in their ‘spawn circle’, which imitates them walking around
+\newline
+4. Zombie enemies must start attacking the player when they come within a certain radius 
+\newline
+5. Zombie enemies must follow the player if they start running away while the zombie is attacking them
+\newline
+6. If the player runs past a certain radius from the zombie’s original spawn location, the zombie must return to their circle
+\newline
+7. Different types of zombies must have different statistics (health, damage, etc.)
+\newline
+8. Zombies must have randomly generated chance of dropping items the player can use or consume when killed
+\newline
+9. Dropped items must be automatically deleted if not picked up within a certain time
+\newline
+10. The player must be able to pick up items they are looking at with the ‘interact’ key
+\newline
+11. The player must be able to access their inventory by pressing the ‘inventory’ key
+\newline
+12. The player must be able to equip, consume, delete, and move around items in their inventory using the mouse
+\newline
+13. The player must be able to fire/use their equipped weapon by pressing the left mouse button (LMB)
+\newline
+14. If the player has a firearm equipped, they must be able to aim down sights using the right mouse button (RMB)
+\newline
+15. The environment must slowly go through a day and night cycle
+\newline
+16. The player must lose health when hit by a zombie
+\newline
+17. Zombies must lose health when hit by the player
+\newline
+18. Players or zombies must die when they reach 0 health
+\newline
+19. Upon player death, the game must reset 
+
+\section{Non-functional Requirements}
+
+\subsection{Look and Feel Requirements}
+1. The graphics of the game shall look very simplistic
+\newline
+2. The input commands from the keyboard and mouse shall appear easy to use
+\newline
+3. When playing the game and inputting commands through the mouse and/or keyboard, the game shall feel responsive.
+
+\subsection{Usability and Humanity Requirements}
+1. Zombie Survival kit shall be usable on a computer or laptop
+\newline
+2. Zombie Survival kit shall require minimal learning for command inputs through the keyboard and mouse
+\newline
+3. Zombie Survival kit is best used by users who speak English as the instructions on how to play the game will be provided in English. 
+
+\subsection{Performance Requirements}
+1. When the user loads the executable to start the game, the time it takes to load the entire game shall not exceed more than 20 seconds.
+\newline
+2. The game shall run at a video refresh rate of 60 frames per second on computers with a GPU with at least 1GB of GDDR5 VRAM.
+\newline
+3. The time it takes the user to close the game shall not exceed more than 5 seconds.
+\newline
+4. Zombie Survival Kit will not take up more than 1gb of ram to run properly.
+
+\subsection{Safety Critical Requirements}
+If the amount of free space on the computer’s hard drive required to download is lacking, the game shall not download and install onto the computer.
+
+\subsection{Precision Requirements}
+1. The collisions on the zombie that indicate the range in which a player’s attack is successful shall be very close to the actual animation of the zombie on screen.
+\newline
+2. The day and night system shall use the computer’s system time to keep track of how much time has passed during the “day” and “night. Once the specified time has been reached, “day” will transition to “night”, and “night” will transition to “day”.
+\newline
+3. The collisions on the player that indicate the range in which a zombie’s attack is successful shall be very close to the actual animation on screen
+\newline
+4. The range in which the player can pick up a droppable item is very close to the animation of the droppable item. The item must also be very close to the center of the player’s point of view.
+
+\subsection{Reliability and Availability Requirements}
+1. All user inputted commands through the keyboard or mouse should only produce that key’s function and not a different key’s function.
+\newline 
+ E.g. Pressing the “w” key on the keyboard to move the player forward will not cause the player to move backwards; which is inputted by pressing the “s” key on the keyboard. 
+\newline
+2. Zombie Survival Kit will always be available for use so long as the computer or laptop is turned on
+
+
+\subsection{Operational and Environmental Requirements}
+
+\subsubsection{Expected Physical Environment}
+1. The user is expected to use the application indoors on a computer or laptop.
+\newline
+2. Zombie Survival Kit shall use no more than 10 GB of space on the computer’s hard drive.
+\newline
+3. The computer should have a discrete GPU with at least 1GB of GDDR5 VRAM for Zombie Survival Kit to run optimally.
+
+\subsubsection{Expected Technological Environment}
+The computer should be running with a Windows 8 or higher operating system.
+
+\subsubsection{Partner Applications}
+1. Scripts shall be coded using Visual Studio 2017
+\newline
+2. Objects, player, and zombie sprites shall be taken from Unity’s asset store.
+\newline
+3. Developers must use Unity 3D v2018 in order to run Zombie Survival Kit.
+
+\subsection{Maintainability and Support Requirements}
+
+1. Zombie Survival Kit is expected to run independently from data-services, allowing the user to run the game without an internet connection.
+\newline
+2. The scripts of Zombie Survival Kit shall incorporate modules for different functions in order to maintain functionality even if one module fails to run properly.
+
+\subsection{Security Requirements}
+1. Zombie Survival Kit shall not require any personal information from the user
+\newline
+2. Zombie Survival Kit shall require permission to access the user’s hard drive to download and install onto the user’s computer.
+
+\subsection{Cultural Requirements}
+Zombie Survival Kit shall not incorporate any symbols, sounds, or animations that are offensive to a variety of cultures or political backgrounds.
+\subsection{Legal Requirements}
+Zombie Survival Kit is licensed under the MIT license.
+\subsection{Health and Safety Requirements}
+
+1. Users with a history of epilepsy or sensitivity to flashing lights should not use this product.
+\newline
+2. The product should be used in a well lit environment
+\newline
+3. Correct posture should be ensured by the user while sitting on computer
+\newline
+4. After every hour of use, a 10 minute break is highly recommended.
+\newline
+5. If the user experiences watering of eyes, a sensation of dizziness or nausea, use of the product should be ceased immediately.
+\newline
+6. The product should never be used if the user is feeling sleepy.
+\newline
+7. The computer being used should be well ventilated and should be cooled adequately.
+\newline
+8. The frame rate should be at least 60 FPS at all times to prevent motion sickness, and frame time variance should be checked and maintained at a maximum of ~16 ms.
+\newline
+9. The age of the user should be at least 12 years.
+
+
+\section{Project Issues}
+1. Building the zombie AI so that the actions of the zombie before it notices a player are for it to roam around the playable map, not any farther from the spawn location of the zombie. However, determining how the zombie roams will be hard to implement. 
+\newline
+2. Implementing automated tests for each functional requirement will be difficult to produce, especially when most functional requirements are based on the gameplay of Zombie Survival Kit (which usually requires user inputted commands to make the player move, pick items up, etc.)
+
+\subsection{Open Issues}
+1. Determining at what range from the player to the zombie that the zombie will begin to chase after the player
+\newline
+2. Determining the range in which a collision happens between the player and objects in game, as well as the enemy zombie.
+\newline
+3. Building the zombie AI so that the actions of the zombie before it notices a player are for it to roam around the playable map, not any farther from the spawn location of the zombie.
+\newline
+4. Determining how long the “day” and “night status of the map will last before it becomes “night” or returns to “day” in the day/night system.
+\newline
+5. Determining how long it takes for zombie to make a valid attack after the user has entered a specified range from the zombie.
+\newline
+6. Determining the spawn rate of zombies during the day and during the night.
+\newline
+7.Determining the depreciation rate of a player’s “hunger” in the hunger system.
+\newline
+8. Determining the collision aspects of a zombie to indicate a valid player attack through ranged or melee attacks.
+\newline
+9. Determining how far droppable items drop from the recently killed zombie.
+\newline
+10. Determining how the rate at which certain items drop
+\newline
+11. Determining what items can be dropped
+\newline
+12. Determining how fast “walking” and “running” is in-game.
+\newline
+13. Determining how fast a zombie will chase a player.
+\newline
+14. Determining how long the zombie will chase a player before it “loses interest” and begins to roam around.
+
+%\subsection{Off-the-Shelf Solutions}
+
+%\subsection{New Problems}
+
+%\subsection{Tasks}
+
+%\subsection{Migration to the New Product}
+
+\subsection{Risks}
+
+\subsubsection{Technical Risks}
+1. Zombie Survival Kit may strain the computer hardware, especially the graphics card and cause overheating and/or system crashes.
+\newline
+2. The hardware on the computer being used to run Zombie Survival Kit may not be powerful enough to maintain the required frame rate of 60 FPS, and cause motion sickness and screen tearing.
+
+\subsubsection{Non Technical Risks}
+1. The developers may not be skilled enough to understand the details of the source code and templates used in Zombie Survival Kit.
+\newline
+2. The players may not find Zombie Survival Kit as sophisticated as AAA industrial-scale video games and may not find the product enjoyable.
+\newline
+3. The developers may want to create a game based on a genre not supported by Zombie Survival Kit.
+
+%\subsection{Costs}
+
+%\subsection{User Documentation and Training}
+
+%\subsection{Waiting Room}
+
+%\subsection{Ideas for Solutions}
+
+\bibliographystyle{plainnat}
+
+\bibliography{SRS}
+
+\newpage
+
+\section{Appendix}
+
+This section has been added to the Volere template.  This is where you can place
+additional information.
+
+\subsection{FAQs}
+
+Q: What minimum computer specs will I need to run the game?
+\newline
+A: CPU: Dual-core Intel i5    
+GPU: GTX 660/960M or equivalent
+RAM: 8GB
+Storage: 10GB
+\newline
+\newline
+Q: What language/framework is the project coded in?
+\newline
+A: It is made with Unity3D using C\#
+\newline
+\newline
+Q: Will the project be open source and be available for download online?
+\newline
+A: Yes, it will be available via a GitLab link
+
+\subsection{Symbolic Parameters}
+
+The definition of the requirements will likely call for SYMBOLIC\_CONSTANTS.
+Their values are defined in this section for easy maintenance.
+
+
+\end{document}
