@@ -11,5 +11,6 @@ https://unitylist.com/p/f1s/Free-Survival-Zombie-Kit
 
 The folders and files for this project are as follows:
 
-Doc - Documentation for the project \n
+Doc - Documentation for the project
+
 Src - Implementation
