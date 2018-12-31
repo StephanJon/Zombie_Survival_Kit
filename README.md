@@ -2,7 +2,7 @@
 
 Team Name: ZMBLND
 
-Team Members: Mohammad Hussain, Brian Jonatan, Shivaansh Prasann
+Team Members: Mohammad Hussain, Stephanus Jonatan, Shivaansh Prasann
 
 
 This project is a reimplementation of "Free Survival Zombie Kit" created by the developer Leandro 
